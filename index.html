@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRAMISH CO. - Fashion & Lifestyle Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B6B',
+                        secondary: '#4ECDC4',
+                        dark: '#292F36',
+                        light: '#F7FFF7'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4ECDC4;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <img src="logo.png" alt="" height="80px" width="80px">
+            <div class="flex items-center space-x-2">
+                <!-- <h1 class="text-2xl font-bold text-dark">IRAMISH CO.</h1> -->
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-dark hover:text-secondary">Home</a>
+                <a href="#products" class="nav-link text-dark hover:text-secondary">Products</a>
+                <a href="#about" class="nav-link text-dark hover:text-secondary">About</a>
+                <a href="#contact" class="nav-link text-dark hover:text-secondary">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-dark focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-b-lg">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="#home" class="py-2 text-dark hover:text-secondary">Home</a>
+                <a href="#products" class="py-2 text-dark hover:text-secondary">Products</a>
+                <a href="#about" class="py-2 text-dark hover:text-secondary">About</a>
+                <a href="#contact" class="py-2 text-dark hover:text-secondary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-primary to-secondary text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <p>#IRAMISH CO. BY IRAM ANSARI</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Discover Unique Fashion Finds</h2>
+                <p class="text-xl mb-6">Handcrafted with love - Earrings, Cups, T-shirts and more!</p>
+                <a href="#products" class="bg-white text-dark font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition duration-300">Shop Now</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-slide-up">
+                <img src="https://gloriettajewels.com/dashboard/assets/images/blog/How%20to%20take%20beautiful%20photographs%20of%20your%20silver%20jewellery.jpg" alt="Stylish woman wearing Iramish Co. earrings and holding a beautifully designed cup. She's surrounded by other products like printed t-shirts, keychains, and bangles." class="rounded-lg shadow-xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-dark">Shop By Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#earrings" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dea7b54d-8b69-4051-a928-5256f60761ad.png" alt="Variety of elegant earrings including studs, hoops, and danglers in gold and silver tones" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">Earrings</h3>
+                </a>
+                <a href="#cups" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2e2c74e6-91f5-4255-a69c-83a2857a5071.png" alt="Collection of stylish ceramic and glass cups with artistic designs" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">Cups</h3>
+                </a>
+                <a href="#tshirts" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6094581-6f3c-4dab-8a57-abac5639e08f.png" alt="Assortment of printed cotton t-shirts with various designs and colors" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">T-shirts</h3>
+                </a>
+                <a href="#bottles" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1551646d-7386-4873-8390-8d1d398b8556.png" alt="Stylish water bottles in different sizes and colors with sleek designs" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">Bottles</h3>
+                </a>
+                <a href="#rings" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/181e42e4-bfc9-4162-a5e0-d292615c8b0e.png" alt="Beautiful rings with different stones and metals displayed on velvet" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">Rings</h3>
+                </a>
+                <a href="#keyrings" class="category-card bg-white rounded-lg p-4 shadow-sm text-center hover:shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f3d93c48-b5c1-42a4-b994-9af3ae8d9b37.png" alt="Fun and functional keyrings in various shapes and colors" class="w-20 h-20 mx-auto mb-2">
+                    <h3 class="font-semibold text-dark">Keyrings</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-dark">Our Products</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="filter-btn bg-secondary text-white px-4 py-2 rounded-full" data-filter="all">All</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="earrings">Earrings</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="cups">Cups</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="tshirts">T-shirts</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="bottles">Bottles</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="rings">Rings</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="nose-pins">Nose Pins</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="bangles">Bangles</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="keyrings">Keyrings</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="clutter">Clutter</button>
+                <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full hover:bg-secondary hover:text-white transition" data-filter="click">Click</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="products-container">
+                <!-- Product items will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/015f4a19-6b10-4fe3-bdbe-19dc6510eeaf.png" alt="Hands working on crafting jewelry and accessories in a creative workshop environment" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-dark">About IRAMISH CO.</h2>
+                    <p class="mb-4 text-gray-700">At IRAMISH CO., we believe in creating unique, high-quality products that add beauty to your daily life. Our journey began with a passion for craftsmanship and design.</p>
+                    <p class="mb-4 text-gray-700">Each piece in our collection - from delicate earrings to stylish printed t-shirts - is carefully curated to bring you the best in fashion and lifestyle accessories.</p>
+                    <div class="flex items-center mt-6">
+                        <div class="mr-4">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white">
+                                <i class="fas fa-gem text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-dark">Quality Materials</h3>
+                            <p class="text-gray-600">We use only premium materials for durability and comfort.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <div class="mr-4">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                                <i class="fas fa-paint-brush text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-dark">Unique Designs</h3>
+                            <p class="text-gray-600">Our team creates original designs that stand out.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-dark">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                        </div>
+                        <button type="submit" class="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                <div class="md:w-1/2 flex flex-col justify-center">
+                    <div class="bg-light p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Contact Information</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-secondary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">WhatsApp: +91 7395022117</p>
+                                </div>
+                            </div>
+                            <!-- <div class="flex items-start">
+                                <div class="mr-4 mt-1">
+                                    <i class="fas fa-envelope text-secondary"></i>
+                                </div> -->
+                                <!-- <div>
+                                    <p class="text-gray-600">Email: iram</p>
+                                </div> -->
+                            <!-- </div> -->
+                            <div class="flex items-start">
+                                <div class="mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-secondary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Find us on Meesho, Indian Mart etc</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <img src="logo.png" alt="" height="80px" width="80px">
+                    <h2 class="text-2xl font-bold">IRAMISH CO.</h2>
+                    <p class="mt-2 text-gray-400">Fashion & Lifestyle Products</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 IRAMISH CO. All rights reserved.Designed by IRAM ANSARI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Generate 100 product items
+        const productsContainer = document.getElementById('products-container');
+        const categories = [
+            'earrings', 'cups', 'tshirts', 'bottles', 'rings', 
+            'nose-pins', 'bangles', 'keyrings', 'clutter', 'click'
+        ];
+        
+        const productNames = [
+            // Earrings
+            'Pearl Drop Earrings', 'Gold Hoops', 'Silver Studs', 'Geometric Danglers', 'Floral Cluster Earrings',
+            'Mini Huggie Hoops', 'Tassel Earrings', 'Moon Phase Earrings', 'Feather Earrings', 'Chandelier Earrings',
+            
+            // Cups
+            'Ceramic Travel Mug', 'Personalized Name Cup', 'Minimalist White Mug', 'Colorful Gradient Cup', 'Inspirational Quote Mug',
+            'Glass Coffee Cup', 'Hand-painted Tea Cup', 'Bamboo Fiber Cup', 'Stoneware Mug', 'Double-walled Tumbler',
+            
+            // T-shirts
+            'Graphic Print Tee', 'Oversized Cotton Tee', 'Tie-dye T-shirt', 'Vintage Band Tee', 'Minimal Typography Shirt',
+            'Abstract Art Tee', 'Pocket Detail T-shirt', 'Cropped Tee', 'Longline T-shirt', 'Organic Cotton Shirt',
+            
+            // Bottles
+            'Stainless Steel Bottle', 'Glass Water Bottle', 'Collapsible Silicone Bottle', 'Thermos Flask', 'Infuser Water Bottle',
+            'Sports Bottle', 'Kids Water Bottle', 'Leak-proof Bottle', 'Insulated Travel Bottle', 'Bamboo Lid Bottle',
+            
+            // Rings
+            'Stacking Ring Set', 'Birthstone Ring', 'Signet Ring', 'Mid-Ring', 'Textured Band Ring',
+            'Adjustable Ring', 'Hamsa Hand Ring', 'Celestial Ring', 'Minimalist Band', 'Chunky Statement Ring',
+            
+            // Nose Pins
+            'Diamond Stud Nose Pin', 'Gold Plated Hoop', 'Pearl Nose Ring', 'L-Shaped Nose Pin', 'Screw Back Nose Stud',
+            'Faux Diamond Pin', 'Moon Nose Ring', 'Silver Ball Nose Pin', 'Crescent Moon Pin', 'Tribal Nose Ring',
+            
+            // Bangles
+            'Gold Bangles Set', 'Adjustable Cuff', 'Silver Charm Bangles', 'Lac Bangles', 'Thread Work Bangles',
+            'Oxidized Silver Bangles', 'Resin Bangles', 'Pearl Embedded Bangles', 'Minimalist Wire Bangles', 'Chunky Metal Bangles',
+            
+            // Keyrings
+            'Leather Tassel Keyring', 'Personalized Name Keyring', 'Minimalist Metal Keyring', 'Wooden Keychain', 'Custom Logo Keyring',
+            'Pom Pom Keyring', 'Geometric Keychain', 'Marble Keyring', 'Resin Keychain', 'Cartoon Character Keyring',
+            
+            // Clutter
+            'Wooden Desktop Organizer', 'Cable Management Box', 'Makeup Brush Holder', 'Jewelry Display Stand', 'Pen Stand',
+            'Entryway Tray', 'Wall-mounted Shelf', 'Bookstand', 'Magazine Rack', 'Bathroom Organizer',
+            
+            // Click
+            'Phone Pop Socket', 'Car Phone Holder', 'Selfie Ring Light', 'Camera Lens Cap', 'Tripod Mount',
+            'Smartphone Grip', 'Universal Phone Stand', 'Phone Card Holder', 'Magnetic Phone Mount', '360° Rotating Holder'
+        ];
+
+        const productImages = [
+            // Earrings
+            'https://cdn.shoplightspeed.com/shops/619638/files/28206488/diamond-cluster-pearl-drop-earrings.jpg', 'https://i.etsystatic.com/7359912/r/il/c97743/1817111442/il_680x540.1817111442_kz8u.jpg', 'https://i.pinimg.com/originals/47/d8/7c/47d87c303fce739e32002c4acaec4e8a.png', 'https://i.etsystatic.com/6155585/r/il/679d89/929429683/il_1588xN.929429683_dggh.jpg', 'https://fuenferjewelers.com/wp-content/uploads/2021/01/DSC_7210-scaled.jpg',
+            'https://i.etsystatic.com/13252197/r/il/4d063a/2622193820/il_570xN.2622193820_p6o8.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61Od6qYQ-RL._UL1000_.jpg', 'https://i.pinimg.com/originals/1a/bf/ba/1abfba4a6452da3b93652b6f091117b7.jpg', 'https://i.pinimg.com/originals/64/75/13/64751310c5e93eed3b77714887e24a1c.jpg', 'https://avatars.mds.yandex.net/i?id=e64f9c0e96482aa047a1489fc147addebc00bcf4-4365178-images-thumbs&n=13',
+            
+            // Cups
+            'https://i.pinimg.com/736x/41/ca/49/41ca49a7fc11435d33476285d1af6a33--cup-of-coffee-coffee-mugs.jpg', 'https://rukminim2.flixcart.com/image/704/844/jdhp47k0/mug/d/7/e/iram-in-name-design-1-abaronee-original-imaf2e8hrfgzbmzu.jpeg?q=90&crop=false', 'https://i.etsystatic.com/10044367/r/il/718c65/3539679121/il_1588xN.3539679121_g5p3.jpg', 'https://cdn0.iconfinder.com/data/icons/3d-front-gradient/512/cup-front-gradient.png', 'https://floweraura-blog-img.s3.ap-south-1.amazonaws.com/creative-birthday-gift-for-sister/motivational+mug.jpg',
+            'https://cdn.nexusnewsfeed.com/images/2018/7/4477-1535646710998.jpg?w=992&h=744', 'https://i.pinimg.com/originals/6b/9d/93/6b9d93b7b395bbc26eef5dc1e57eed54.jpg', 'https://avatars.mds.yandex.net/i?id=db2244f6b9f371cd9371e36fc83b0735ade1f634-4076875-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=1558ba0e1ae2627b724278d3ac2b7e5a0b0eded4-4434862-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=b2fcda4a5d0b5662de54052fcd34b5118acdb406-5877464-images-thumbs&n=13',
+            
+            // T-shirts
+            'https://i.ebayimg.com/images/g/rJMAAeSwrplnpSzH/s-l400.jpg', 'https://img.shopstyle-cdn.com/sim/5d/51/5d513155920522b1c1b317d6ead42b00_best/cotton-on-oversized-ribbed-tee-in-grey.jpg', 'https://avatars.mds.yandex.net/i?id=10760cbd58f9daf983a8cacd8ae3ec02ff4ca63a-5137607-images-thumbs&n=13', 'https://i.pinimg.com/736x/03/5f/84/035f84f704552a5544746b7e7fe30ce5.jpg', 'https://i.pinimg.com/736x/55/dd/c0/55ddc0a8424c0380716a61ed6ef65d52.jpg',
+            'https://avatars.mds.yandex.net/i?id=63c44f49be8a2bf13cb4833a54baf209cf3438fd-5364055-images-thumbs&n=13', 'https://cdn-images.farfetch-contents.com/13/06/46/68/13064668_13966946_480.jpg', 'https://www.cdiscount.com/pdt2/7/6/0/1/700x700/mp61610760/rw/t-shirt-blanc-femme-adidas-cropped-tee.jpg', 'https://ml.thcdn.com/productimg/960/960/14483206-1155037196779849.jpg', 'https://avatars.mds.yandex.net/get-mpic/5032583/img_id7803960339357825811.jpeg/orig',
+            
+            // Bottles
+            'https://i.pinimg.com/originals/a9/ed/c4/a9edc4057e0751ea1551cf92a88c9468.jpg', 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1wKmpg.img?w=1910&h=1000&m=4&q=67', 'https://avatars.mds.yandex.net/i?id=e8020c8cd0a61db28c9615e194a70a56eaa1c44b-5342977-images-thumbs&n=13', 'https://i.ebayimg.com/images/g/L1cAAOSwzA5gteMh/s-l500.jpg',
+            'https://avatars.mds.yandex.net/i?id=f67698ef30d07b73c26dafd47c1a86c841bd2d32-3907639-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=84a0aa1f6a4319b64f71b7de936e810c49c5f725-4079994-images-thumbs&n=13', 'https://i.ebayimg.com/images/g/c3wAAOSwE6FiOt1y/s-l400.jpg', 'https://cdn.shopify.com/s/files/1/2788/9590/products/rose_1024x1024.png?v=1666093365', 'https://avatars.mds.yandex.net/i?id=3d904fd6c85e3438340abb6700761ffe06bdb83b-9183040-images-thumbs&n=13',
+            
+            // Rings
+            'https://avatars.mds.yandex.net/i?id=e7135b91cf8640470f048b4285856237eefc07ed-16467138-images-thumbs&n=13', 'https://i.etsystatic.com/17755792/r/il/213e1e/1714998051/il_794xN.1714998051_9ukp.jpg', 'https://avatars.mds.yandex.net/i?id=695cf828c6b3378ea5d4bf015916ed2db650fe13-11401793-images-thumbs&n=13', 'https://i.ebayimg.com/images/g/YSAAAOSwvqVb-Ad2/s-l1600.jpg', 'https://img.joomcdn.net/7a8907581f1919f26fb51b73c1d34d55162557a5_original.jpeg',
+            'https://avatars.mds.yandex.net/i?id=85d4b217e724f332a336db4829bd35f644a0fdb8-4956937-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=2768a7511451f6a6dffc6e40c687f3faf8df39eb-5281716-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=1ee032855a2d292eb00c242d38aa14e05486ae6d-5888823-images-thumbs&n=13', 'https://i.pinimg.com/736x/41/91/1f/41911fab91dfae11af21f06c704fd858.jpg', 'https://avatars.mds.yandex.net/i?id=c5173699509f97d2221488fc22b5aa7183d6160a-4730906-images-thumbs&n=13',
+            
+            // Nose Pins
+            'https://avatars.mds.yandex.net/i?id=f6afdac404b5e15b468f7f7195d1c646e2e00e1914d61b01-10499998-images-thumbs&n=13', 'https://i.pinimg.com/736x/0e/c7/d6/0ec7d62a49fd3bc1872a115500aee936.jpg', 'https://i.pinimg.com/originals/c2/14/ae/c214ae9d7592c1e47b315f57ec5fa11d.jpg', 'https://avatars.mds.yandex.net/i?id=f5913799b633c258d039c0ca03154b36857d444b-10639647-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=933e127291a3bc22ef42fc9de9b9038ba423038f-10752987-images-thumbs&n=13',
+            'https://avatars.mds.yandex.net/i?id=b6d3fb7d4e197b97bbeb7b384831531d57d053d9-5221765-images-thumbs&n=13', 'https://i.pinimg.com/originals/7d/4d/36/7d4d36efabc5f739c1d4234f92b89cb5.jpg', 'https://img.ltwebstatic.com/images3_spmp/2023/06/08/16862274416f01b4f2b35064fe20e455576329a800_thumbnail_405x552.jpg', 'https://i.etsystatic.com/18999673/r/il/9251c9/2605564811/il_570xN.2605564811_md8o.jpg', 'https://i.etsystatic.com/7764513/r/il/fc12bc/1538409923/il_1588xN.1538409923_721z.jpg',
+            
+            // Bangles
+            'https://i.etsystatic.com/8734070/d/il/370eaa/763842937/il_340x270.763842937_iztr.jpg?version=1', 'https://i.pinimg.com/originals/8b/0d/ec/8b0dec8ac01212679d6cfc5fedb33dbb.jpg', 'https://avatars.mds.yandex.net/i?id=315f6f9effec2a139cbd17b792ae1e4dcba99d27-9211697-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=ee8b3e4673d73b19d2d74d20c47433f5dc6be0a2-5322694-images-thumbs&n=13', 'https://i.etsystatic.com/27210284/r/il/e69305/2990733285/il_570xN.2990733285_5ruf.jpg',
+            'https://i.pinimg.com/474x/07/61/22/0761225e7c2ba3bcbc47e3034aab6e9a.jpg?nii=t', 'https://m.media-amazon.com/images/I/71PV54i3gWL._AC_UY1100_.jpg', 'https://avatars.mds.yandex.net/i?id=ffcf794e9fa88d949241ca7bbbe5d4cd09cfa15a-4809555-images-thumbs&n=13', 'http://imshopping.rediff.com/imgshop/800-1280/shopping/pixs/4901/m/mfpearlbang1._gold-plated-rice-pearls-bangles.JPG', 'https://i.pinimg.com/originals/27/9c/53/279c539f91005095c93d4565b420d77c.jpg',
+            
+            // Keyrings
+            'https://avatars.mds.yandex.net/i?id=e3c33c2f7b0d8db5a927fb95e12b92e6249dfe32-16509561-images-thumbs&n=13', 'https://i.pinimg.com/474x/42/bd/e5/42bde5a908ae1be4d7a0811290dc5462.jpg', 'https://i.pinimg.com/736x/9f/30/15/9f30154b4bbd807daea2237b5eb5a085.jpg', 'https://avatars.mds.yandex.net/i?id=f72fdf17ce40582daa4f234967974e69680abae1-9102364-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=3b394d548464ef66e5a2d93b5fba67f3e1a779fe-5213440-images-thumbs&n=13',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShC-2n2giJlF0qPlzya21qi_O7ipcIee_-7g&s', 'https://avatars.mds.yandex.net/i?id=b9098bdb25683c36efe3423eb44888cc4e48580e-5488376-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=c8dc90530e8b6ab54b02919a6734f3c8ecb9916d-9203667-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=88a1e22bc355dd3ca868db6ffc137a1ad07d7484-9683825-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=dd53e6bd24e8092cac8a631010289648819ae367-5513755-images-thumbs&n=13',
+            
+            // Clutter
+            'https://avatars.mds.yandex.net/i?id=24e4b9a233e1d60478db378176991cab0d13933f-6959765-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=59d11f8947cf46f0f5774dc9f1f518d308bb566d-4751583-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=fb8cef443c5892823b6a28855681c084d48308bb-5886736-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=6a055edbb3f3c68b4005890b6421dad675f76cc2-5194964-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=57804c5811f0e0e3c0ce2c9e1fe30201a901b34b-5222726-images-thumbs&n=13',
+            'https://avatars.mds.yandex.net/i?id=e1854c0d210af1ff28151bc73d08fcfc5dca2bf1-7085252-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=0584dee440a4fe1a62286a41643c6eb9893c9287-13010480-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=a1d8e1997c5537f1056b11f45d360652667bdbf5-4575620-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=c4c283a77e6b0bba2531d6ce858afd69ab7bfb26-5232900-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=2150f25fe785a927d141b9c26ef4de1b8c54c7a1-3631034-images-thumbs&n=13',
+            
+            // Click
+            'https://avatars.mds.yandex.net/i?id=4fca9cb3063c9c6c0ba82bd351a63847dfd900ca-5221961-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=36fab4467e83fb7e1a254f10bc73bf51cfec324e-10952687-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=93a5aea9e1bd9e3bf4868e94dad59e79d4fbaec6-5896701-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=38bdddeb5ba0f5ee4a3f5b9c7220f3f90b08b7b6-5235306-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=c64d09f321fbac390604e197df2da3e4b24f62b2-5235960-images-thumbs&n=13',
+            'https://avatars.mds.yandex.net/i?id=d077328f9d560d66ac52a8d87abce7c1887c50cd-10111702-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=abad889e463d873f8eeadfb0995a1111a89718a5-9541119-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=d894c1e1434d7a105c81865a09acf31198e9e3ed-5295804-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=7257f47ea9284874fa85a17e9519995d-5102865-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=015fbdea3ea770c6a004f396e4523f825e98dbbe5dea20d0-6311157-images-thumbs&n=13', 'https://avatars.mds.yandex.net/i?id=35a1c5d51625af668be451b28f34316d7d2e00fc-6358986-images-thumbs&n=13'
+        ];
+
+        const altTexts = [
+            // Earrings
+            "Elegant pearl drop earrings with gold accents on display",
+            "Shiny gold hoop earrings with polished finish",
+            "Minimalist silver stud earrings with round design",
+            "Modern geometric dangler earrings with intricate details",
+            "Floral cluster earrings with multi-colored stones",
+            "Small gold huggie hoop earrings with easy closure",
+            "Colorful tassel earrings with delicate movement",
+            "Moon phase earrings showing celestial design",
+            "Lightweight feather earrings with natural look",
+            "Statement chandelier earrings with multiple tiers",
+            
+            // Cups
+            "White ceramic travel mug with black silicone lid",
+            "Personalized cup with handwritten name in elegant script",
+            "Sleek minimalist white ceramic mug on table",
+            "Gradient colored cup transitioning from blue to pink",
+            "White mug with inspirational 'Dream Big' quote",
+            "Clear glass coffee cup showing rich espresso",
+            "Hand-painted floral tea cup with saucer",
+            "Eco-friendly bamboo fiber cup with natural finish",
+            "Heavy stoneware mug with matte texture",
+            "Insulated double-walled tumbler with condensation",
+            
+            // T-shirts
+            "Black t-shirt with abstract graphic print on front",
+            "Oversized cotton tee in neutral color draping on model",
+            "Vibrant tie-dye t-shirt with rainbow colors",
+            "Retro vintage band t-shirt with distressed look",
+            "Simple typography t-shirt with clean sans-serif font",
+            "Colorful abstract art t-shirt resembling watercolors",
+            "Classic pocket t-shirt with small chest pocket detail",
+            "Flattering cropped t-shirt with raw hem",
+            "Longline t-shirt extending below waistline",
+            "Organic cotton shirt with natural color",
+            
+            // Bottles
+            "Shiny stainless steel water bottle with logo",
+            "Clear glass water bottle with silicone sleeve",
+            "Compact collapsible silicone bottle when folded",
+            "Thermos flask keeping drinks hot for hours",
+            "Glass infuser bottle with fruit inside",
+            "Ergonomic sports bottle with carry handle",
+            "Colorful kids water bottle with cartoon characters",
+            "Leak-proof flip-top bottle tested for travel",
+            "Insulated bottle with temperature gauge",
+            "Sustainable bamboo lid bottle on wooden table",
+            
+            // Rings
+            "Stackable ring set in mixed metals",
+            "Dainty birthstone ring with gem in prong setting",
+            "Classic signet ring with engraved initials",
+            "Trendy mid-ring designed for finger balance",
+            "Textured gold band with hammered finish",
+            "Adjustable ring that fits multiple sizes",
+            "Hamsa hand ring with protective symbolism",
+            "Celestial ring with sun and moon motif",
+            "Ultra thin minimalist gold band",
+            "Chunky statement ring with large center stone",
+            
+            // Nose Pins
+            "Tiny diamond stud nose pin with secure back",
+            "Delicate gold plated nose hoop with hinge",
+            "Pearl nose ring with elegant simplicity",
+            "L-shaped nose pin for secure fit",
+            "Screw back nose stud with safety feature",
+            "Sparkling faux diamond nose pin",
+            "Crescent moon nose ring in silver",
+            "Classic silver ball nose pin for everyday wear",
+            "Crescent moon nose pin with star detail",
+            "Ethnic tribal nose ring with intricate design",
+            
+            // Bangles
+            "Set of gold bangles suitable for stacking",
+            "Adjustable cuff bangle to fit all sizes",
+            "Charm bangles with meaningful symbols",
+            "Traditional lac bangles in bright colors",
+            "Embroidered thread work bangle set",
+            "Oxidized silver bangles with rustic look",
+            "Translucent resin bangles with flower embed",
+            "Pearl embedded bangles with classic elegance",
+            "Minimalist wire bangles with clean lines",
+            "Chunky metal bangles making statement",
+            
+            // Keyrings
+            "Leather tassel keyring in various colors",
+            "Personalized name keyring with letter beads",
+            "Minimalist keyring with geometric pendant",
+            "Natural wooden keychain with laser engraving",
+            "Corporate logo keyring for brand promotion",
+            "Fluffy pom pom keyring in fun colors",
+            "Geometric keychain with modern aesthetic",
+            "Marble print keyring with gold hardware",
+            "Resin keychain with flower preservation",
+            "Cartoon character keyring for kids",
+            
+            // Clutter
+            "Wooden desktop organizer with compartments",
+            "Stylish cable management box with lid",
+            "Acrylic makeup brush holder with clean look",
+            "Jewelry display stand showing off rings",
+            "Contemporary pen stand for desk organization",
+            "Entryway tray for keys and daily essentials",
+            "Wall-mounted floating shelf installation",
+            "Bookstand to keep reading materials handy",
+            "Sleek modern magazine rack design",
+            "Bathroom organizer with suction cups",
+            
+            // Click
+            "Phone pop socket for better grip",
+            "Car dashboard phone holder mounting",
+            "Selfie ring light with adjustable brightness",
+            "Camera lens cap to protect equipment",
+            "Small tripod mount for steady shots",
+            "Ergonomic smartphone grip accessory",
+            "Universal phone stand in landscape mode",
+            "Phone card holder attachment",
+            "Magnetic phone mount system",
+            "360-degree rotating holder for easy viewing"
+        ];
+
+        for (let i = 0; i < 100; i++) {
+            const categoryIndex = Math.floor(i / 10);
+            const product = {
+                id: i + 1,
+                name: productNames[i],
+                price: (Math.floor(Math.random() * 50) + 5) * 10,
+                category: categories[categoryIndex],
+                image: productImages[i],
+                alt: altTexts[i]
+            };
+
+            const productCard = document.createElement('div');
+            productCard.className = `product-card bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg ${product.category}`;
+            productCard.innerHTML = `
+                <div class="relative overflow-hidden">
+                    <img src="${product.image}" alt="${product.alt}" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="absolute top-2 right-2 bg-primary text-white text-xs font-semibold px-2 py-1 rounded">${product.category}</div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg text-dark mb-1">${product.name}</h3>
+                    <p class="text-gray-600 mb-3">₹${product.price}</p>
+                    <a href="https://www.meesho.com" target="_blank" class="block w-full bg-secondary text-white text-center py-2 rounded hover:bg-opacity-90 transition">Buy Now</a>
+                </div>
+            `;
+            productsContainer.appendChild(productCard);
+        }
+
+        // Filter products
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-filter');
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-secondary', 'text-white');
+                    btn.classList.add('bg-gray-200');
+                });
+                
+                this.classList.remove('bg-gray-200');
+                this.classList.add('bg-secondary', 'text-white');
+                
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(card => {
+                    if (filterValue === 'all' || card.classList.contains(filterValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            const whatsappUrl = `https://wa.me/917395022117?text=${whatsappMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Thank you for your message! You are being redirected to WhatsApp.');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
